@@ -19,7 +19,12 @@ h2 {
   font-size: 18px;
   font-weight: normal;
 }
-#myChart{
-  width: 400px;
-  height: 400px;
+.box{
+  float: left;
+  width: 50%;
+}
+@media screen and (max-width: 750px) {
+    .box{
+      width: 90%;
+    }
 }

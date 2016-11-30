@@ -4,37 +4,63 @@ var data = [
     ["2017", 20, 11, 14, 13],
     ["2018", 30, 15, 12, 13]
 ];
-
-var years=[];
-for(var i = 1; i < data.length; i++){
-years.push(data[i][0])
-}
+var years = [];
 var ford = [];
-for(var i = 1; i < data.length; i++){
-ford.push(data[i][1])
-}
 var volvo = [];
-for(var i = 1; i < data.length; i++){
-volvo.push(data[i][2])
-}var toyota = [];
-for(var i = 1; i < data.length; i++){
-toyota.push(data[i][3])
-}var honda = [];
-for(var i = 1; i < data.length; i++){
-honda.push(data[i][4])
+var toyota = [];
+var honda = [];
+
+
+function refreshChart(changes, source) {
+
+    ford= [];
+    volvo= [];
+    toyota= [];
+    honda = [];
+
+    for (var i = 1; i < data.length; i++) {
+        years.push(data[i][0])
+    }
+    for (var i = 1; i < data.length; i++) {
+
+        ford.push(parseInt(data[i][1]))
+
+    }
+    for (var i = 1; i < data.length; i++) {
+        volvo.push(parseInt(data[i][2]))
+    }
+    for (var i = 1; i < data.length; i++) {
+        toyota.push(parseInt(data[i][3]))
+    }
+    for (var i = 1; i < data.length; i++) {
+        honda.push(parseInt(data[i][4]))
+    }
+    console.log(ford)
+    if (myChart) {
+      // console.log(ford)
+      // console.log(volvo)
+      // console.log(toyota)
+      // console.log(honda)
+      // console.log(myChart.data.datasets[0].data)
+      render();
+    }
 }
+
 var container = document.getElementById('example');
 var hot = new Handsontable(container, {
     data: data,
     rowHeaders: true,
-    colHeaders: true
+    colHeaders: true,
+    afterChange: refreshChart
 });
 
+var render = (function(){
+console.log('yay')
+})
 var ctx = document.getElementById("myChart");
 var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
-      // ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"] old labels
         labels: years,
 
         datasets: [{
@@ -57,7 +83,7 @@ var myChart = new Chart(ctx, {
                 'rgba(255, 159, 64, 1)'
             ],
             borderWidth: 1
-        },{
+        }, {
             label: '# of volvo',
             data: volvo,
             backgroundColor: [
@@ -77,7 +103,7 @@ var myChart = new Chart(ctx, {
                 'rgba(255, 159, 64, 1)'
             ],
             borderWidth: 1
-        },{
+        }, {
             label: '# of Toyota',
             data: toyota,
             backgroundColor: [
@@ -97,7 +123,7 @@ var myChart = new Chart(ctx, {
                 'rgba(255, 159, 64, 1)'
             ],
             borderWidth: 1
-        },{
+        }, {
             label: '# of Honda',
             data: honda,
             backgroundColor: [
@@ -123,12 +149,18 @@ var myChart = new Chart(ctx, {
         scales: {
             yAxes: [{
                 ticks: {
-                    beginAtZero:true
+                    beginAtZero: true
                 }
             }]
         }
     }
 });
+
+
+
+
+
+
 //handsontable
 
 //chart link
