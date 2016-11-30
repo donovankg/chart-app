@@ -12,7 +12,7 @@ var honda = [];
 
 
 function refreshChart(changes, source) {
-
+    years = []
     ford= [];
     volvo= [];
     toyota= [];
@@ -22,9 +22,7 @@ function refreshChart(changes, source) {
         years.push(data[i][0])
     }
     for (var i = 1; i < data.length; i++) {
-
         ford.push(parseInt(data[i][1]))
-
     }
     for (var i = 1; i < data.length; i++) {
         volvo.push(parseInt(data[i][2]))
@@ -35,14 +33,14 @@ function refreshChart(changes, source) {
     for (var i = 1; i < data.length; i++) {
         honda.push(parseInt(data[i][4]))
     }
-    console.log(ford)
-    if (myChart) {
-      // console.log(ford)
-      // console.log(volvo)
-      // console.log(toyota)
-      // console.log(honda)
-      // console.log(myChart.data.datasets[0].data)
-      render();
+    console.log(myChart);
+    if(hot){
+      myChart.config.data.datasets[0].data = ford;
+      myChart.config.data.datasets[1].data = volvo;
+      myChart.config.data.datasets[2].data = toyota;
+      myChart.config.data.datasets[3].data = honda;
+      myChart.update();
+
     }
 }
 
@@ -52,6 +50,7 @@ var hot = new Handsontable(container, {
     rowHeaders: true,
     colHeaders: true,
     afterChange: refreshChart
+
 });
 
 var render = (function(){
