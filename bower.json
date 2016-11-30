@@ -1,0 +1,20 @@
+{
+  "name": "chart-app",
+  "authors": [
+    "Donovan Goldston <donovan.goldston@Ksquarelabs.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "handsontable": "^0.29.0"
+  }
+}
