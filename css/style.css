@@ -4,7 +4,13 @@ body {
   font-size: 13px;
   font-family: 'Open Sans', Helvetica, Arial;
 }
+header{
+  margin: 0 auto;
+  background: cornsilk;
+  padding: 5px;
+  text-align: center;
 
+}
 a {
   color: #34A9DC;
   text-decoration: none;
@@ -13,17 +19,23 @@ a {
 p {
   margin: 5px 0 20px;
 }
-
+#example{
+  margin: 5% 0 5% 15%;
+}
 h2 {
   margin: 20px 0 0;
   font-size: 18px;
   font-weight: normal;
 }
 .box{
+  margin: 0 auto;
   float: left;
   width: 50%;
 }
 @media screen and (max-width: 750px) {
+  #example{
+    margin: 5% 0 5% 5%;
+  }
     .box{
       width: 90%;
     }
