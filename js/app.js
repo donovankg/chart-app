@@ -33,7 +33,6 @@ function refreshChart(changes, source) {
     for (var i = 1; i < data.length; i++) {
         honda.push(parseInt(data[i][4]))
     }
-    console.log(myChart);
     if(hot){
       myChart.config.data.datasets[0].data = ford;
       myChart.config.data.datasets[1].data = volvo;
@@ -54,7 +53,6 @@ var hot = new Handsontable(container, {
 });
 
 var render = (function(){
-console.log('yay')
 })
 var ctx = document.getElementById("myChart");
 var myChart = new Chart(ctx, {
