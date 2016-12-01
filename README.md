@@ -1,5 +1,5 @@
-## Chart App
-#https://donovankg.github.io/chart-app/
+# Chart App
+##https://donovankg.github.io/chart-app/
 This app used handsontable and chartjs (can be added with bower).
 
 When the app loads an object is created with handsontable and then the data is 
