@@ -34,7 +34,7 @@ h2 {
 }
 @media screen and (max-width: 750px) {
   #example{
-    margin: 5% 0 5% 5%;
+    margin: 0;
   }
     .box{
       width: 90%;
